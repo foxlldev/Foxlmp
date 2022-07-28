@@ -1,0 +1,56 @@
+body {
+    background-color: #1c1c1c;
+    color: white;
+    font-family:'DM Sans', sans-serif;
+}
+
+#picture {
+    margin:5px;
+    margin-left: 15px;
+}
+
+.detail, #ls {font-family:sans-serif;margin:2px;}
+.detail, #voltxt, #looptgl {
+    color:lightgrey;
+    margin-left: 25px;
+    font-size: 30px;
+}
+#ls {
+    color:white;
+    margin-left: 15px;
+    font-size: 17px;
+}
+
+#selectFileButton{
+    margin-left:25px;
+    margin-right:5px;
+}
+#playButton,#selectFileButton {
+    margin-top: 10px;
+    font-size:20px;
+}
+#voltxt {
+    color: grey;
+    font-size: 14px;
+}
+#volinp {
+    width: 40px;
+    border-radius: 3px;
+    background: darkgrey;
+}
+
+button {
+    color: rgb(255, 255, 255);
+    background: rgba(0,0,0,0.25);
+    padding: 7px;
+    padding-left:10px;padding-right:10px;
+    border-style:solid;
+    border-color:rgb(255, 255, 255);
+    border-radius:3px;
+    font-family:'Quicksand', sans-serif;
+    transition:0.3s;
+}
+button:hover {
+    background-color: skyblue;
+    color:black;
+}
