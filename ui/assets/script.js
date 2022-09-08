@@ -37,6 +37,10 @@ function toggleLoop() {
     }
 }
 
+function loadPage() {
+    setVolumeTo(window.localStorage.getItem('volume'));
+}
+
 function loadLoop() {
     loopToggle.classList.remove('fa-repeat');
     loopToggle.classList.remove('fa-arrow-down-short-wide');
@@ -88,9 +92,13 @@ function setProgress() {
 }
 
 function setVolume() {
-    let val = document.getElementById('volume-slider').value;
-    gaudio.volume = val/100;
+    setVolumeTo(document.getElementById('volume-slider').value);
+}
+function setVolumeTo(val) {
+    document.getElementById('volume-slider').value = val;
     document.getElementById('volume-label').innerText = val+"%";
+    if (gaudio !== null) gaudio.volume = val/100;
+    window.localStorage.setItem('volume', val);
 }
 
 playButton.onclick = async () => {
@@ -172,7 +180,7 @@ async function getFileAndPlay() {
         gaudio.play();
         console.log(gaudio)
 
-        //gaudio.volume = latestvolume/100;
+        setVolume();
 
         console.log(document.getElementsByClassName('onlyPlayingButtons'))
         for (var i = 0; i < document.getElementsByClassName('onlyPlayingButtons').length; i++) {
